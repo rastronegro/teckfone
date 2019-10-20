@@ -1,0 +1,113 @@
+<?php
+require 'inc/configuration.php';
+require 'inc/Slim-2.x/Slim/Slim.php';
+
+\Slim\Slim::registerAutoloader();
+
+$app = new \Slim\Slim();
+
+// GET route
+$app->get(
+    '/',
+    function () {
+        require_once("view/index.php");
+    }
+);
+
+$app->get(
+    '/servico',
+    function () {
+        require_once("view/servico.php");
+    }
+);
+$app->get(
+    '/shop',
+    function () {
+        require_once("view/shop.php");
+    }
+);
+
+$app->get(
+    '/ajuda',
+    function () {
+        require_once("view/ajuda.php");
+    }
+);
+
+$app->get(
+    '/vitrine',
+    function () {
+        require_once("view/vitrine.php");
+    }
+);
+
+$app->get(
+    '/orcamento',
+    function () {
+        require_once("view/solicita-os.php");
+    }
+);
+
+$app->get('/produtos', function(){
+
+    $sql = new Sql();
+
+    $data = $sql->select("SELECT * FROM tb_produtos p join tb_categoria c on p.id_key_categoria = c.cat_id WHERE c.cat_id = 1 order by preco_desc limit 5;");
+	
+	echo json_encode($data);
+
+});
+
+$app->get('/categoria', function(){
+	
+	$sql = new Sql();
+	
+	$data = $sql->select("SELECT * FROM tb_produtos p join tb_categoria c on p.id_key_categoria = c.cat_id WHERE c.cat_id = 7 order by preco_desc limit 5;");
+	
+	echo json_encode($data);
+	
+});
+
+
+$app->get("/produto-:cod", function($cod){
+	
+	$sql = new Sql();
+
+    $produtos = $sql->select("select * from tb_produtos p join tb_fotos f on p.id_prod = f.id_key_produto where id_prod = $cod");
+	
+	$produto = $produtos[0];
+	$foto = $produto['prod_foto_principal'];
+	$preco_real = $produto['preco_real'];
+	$fotos = explode(".", $foto);
+	$produto['parcelas'] = 10;
+    $produto['parcela'] = number_format($preco_real/$produto['parcelas'], 2, ",", ".");
+	
+	
+	$sql = new Sql();
+	
+    $imagen = $sql->select("SELECT id_caminho FROM tb_fotos where id_key_produto = $cod order by id_foto;");
+	
+	$linha = count($imagen);
+
+	require_once("view/vitrine.php");
+
+
+
+});
+
+
+$app->run();
+
+
+}
+
+/*
+
+var_dump($cod);
+echo json_encode($produtos);
+echo json_encode($produtos);
+
+*/
+
+
+

@@ -1,0 +1,145 @@
+@font-face {
+	font-family: 'EngraversGothic BT';
+	src: url("../fonts/EngraversGothic_BT.ttf");
+	font-size: 1em;
+}
+:root{
+    --primary-gradient: linear-gradient(to right, #4e4376, #2b5876);
+    --mango-gradient : linear-gradient(to top, #01245E, #fff);
+    --text-color: #F7F9F9;
+    --primary-shadow: 3px 4px 7px rgba(27, 27, 27, 0.534);
+
+}
+
+html, body{
+    height: 100%;
+    overflow: hidden;
+    background: #F7F9F9;
+    background: var(--mango-gradient);
+}
+section{ margin-top: calc(30% - 20%); }
+.container .panel{
+    width: 80%;
+    height: 72%;
+    margin: 0 auto;
+    box-shadow: var(--primary-gradient);
+}
+
+.row{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    height: 100%;
+    background: #fff;
+}
+
+.liquid{
+    background: url('../_img-adm/Wave.png') no-repeat;
+    background-size: cover;
+}
+
+.liquid h4{
+    text-align: left;
+    padding: 0 2rem;
+    margin-bottom: 10px;
+    color: whitesmoke;
+    font-family: var(--Montserrat);
+}
+
+.jpg-ilustre{
+    width: 100%;
+    height: 320px;
+}
+
+.jpg-ilustre .item .login_img{
+    width: 440px;
+    background-size: cover;
+}
+
+.owl-dots{
+    position: fixed;
+    padding: 3rem 1.2rem;
+    display: flex !important;
+    flex-direction: column;
+    transform: translateY(-240px);
+}
+.owl-dots button{
+    border-radius: 5rem;
+    margin: .3rem 0;
+}
+.owl-dots button span{
+    background: var(--text-color) !important;
+    margin: 0rem .6rem !important;
+}
+.follow{width: 202px; margin: 0 auto; padding: 10px;}
+.follow img{text-align: center; width: 200px; }
+
+.btn{
+    padding: .5rem 1.5rem;
+    border: none;
+    border-radius: 4rem;
+    background: #2b5876;
+    color: whitesmoke;
+    font-size: .7rem;
+    font-family: var(--Montserrat);
+    box-shadow: var(--primary-shadow);
+    cursor: pointer;
+}
+.btn:hover{opacity: 0.8;}
+
+.login .btn-signup, 
+form .btn-login{
+    background: var(--primary-gradient);
+    float: right;
+    margin: 1rem;
+}
+
+.titles{
+    margin-bottom: 2.2rem;
+}
+
+form{
+    height: 55%;
+    max-height: 280px;
+    margin-top: 5.5rem;
+}
+
+form h3, form h6{
+    font-family: arial;
+    font-size: 1.50rem;
+    padding: 0;
+    margin: 0;
+}
+
+form .form-group{
+    text-align: left;
+    border: 1px solid #999;
+    margin-top: 10px;
+    margin-right: 2rem;
+    border-radius: 3rem;
+    padding: 0 20px;
+    width: 265px;
+}
+
+form .form-group .form-input{
+    padding: .5rem 1rem;
+    background: #fff;
+    border: none;
+    font-size: .9rem;
+    overflow: hidden;
+
+}
+
+form input:focus{
+    outline: 0;
+}
+
+form .input-icon{
+    display: inline;
+    color: var(--border-color);
+}
+
+form .btn-login{
+    float: none;
+    padding: .8rem 5rem;
+    margin-left: 2rem;
+}

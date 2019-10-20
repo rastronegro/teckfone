@@ -1,0 +1,175 @@
+angular.module("shop", []).controller("mercadoria-controller", function($scope, $http){
+
+	$scope.produtos = [];
+	$scope.categoria = [];
+	
+	var initCarousel = function(){
+
+		$("#shopping").owlCarousel({
+	 
+	      autoPlay	: 5000,
+	      loop		: true,
+		  dotsEach	: true,
+		  singleItem: true,
+		  responsive: {
+        0:{
+            items:1
+		},
+		600:{
+            items:2
+        },
+        900:{
+            items:3
+        },
+        1000:{
+            items:4
+        }}
+	 
+	  	});
+	
+
+	
+var owl = $('#shopping');
+owl.owlCarousel();
+// Go to the next item
+$('#btn-destaque-next').click(function() {
+    owl.trigger('next.owl.carousel');
+})
+// Go to the previous item
+$('#btn-destaque-prev').click(function() {
+    // With optional speed parameter
+    // Parameters has to be in square bracket '[]'
+    owl.trigger('prev.owl.carousel', [300]);
+})
+	};
+	
+
+	$http({
+	  method: 'GET',
+	  url: 'produtos'
+	}).then(function successCallback(response) {
+
+	    $scope.produtos = response.data;
+
+	    setTimeout(initCarousel, 1000);
+
+	  }, function errorCallback(response) {
+	    // called asynchronously if an error occurs
+	    // or server returns response with an error status.
+	  });
+	
+	$http({
+	  method: 'GET',
+	  url: 'acessorios'
+	}).then(function successCallback(response) {
+
+	    $scope.acessorios = response.data;
+		
+
+	  }, function errorCallback(response) {
+	    // called asynchronously if an error occurs
+	    // or server returns response with an error status.
+	  });
+	
+	
+});
+
+$(document).ready(function(){
+                     
+
+$(".acessorios").owlCarousel({
+    //stagePadding: 50,
+    loop:true,
+    //margin:10,
+    //nav:true,
+    dotsEach:true,
+    //navContainer:true,
+    //dotsContainer:true,
+    responsive:{
+    0:{
+            items:1
+		},
+		600:{
+            items:2
+        },
+        900:{
+            items:3
+        },
+        1000:{
+            items:4
+        }}
+});
+
+	var owl2 = $('.acessorios');
+owl2.owlCarousel();
+// Go to the next item
+$('#btn-acessorio-next').click(function() {
+    owl2.trigger('next.owl.carousel');
+});
+// Go to the previous item
+$('#btn-acessorio-prev').click(function() {
+    // With optional speed parameter
+    // Parameters has to be in square bracket '[]'
+    owl2.trigger('prev.owl.carousel', [300]);
+});
+	
+	
+$(".imagem-produto-p img").on("click",function(){
+    $('li').click(function() {
+        $(this).closest('ul').find('li').removeClass('efeito');
+        $(this).addClass('efeito');
+    });
+
+    $(".img-produto").attr({
+        "src":"_img/produto/"+$(this).data('produto')
+    });
+});
+
+//controle de decida aos contato
+    $('nav a[href^="#"]').on('click', function(e) {
+	e.preventDefault();
+	var id = $(this).attr('href'),
+			targetOffset = $(id).offset().top;
+			
+	$('html, body').animate({ 
+		scrollTop: targetOffset - 200
+	}, 500);
+});
+
+//controle de subida ao topo
+$('footer a[href^="#"]').on('click', function(e) {
+	e.preventDefault();
+	var id = $(this).attr('href'),
+			targetOffset = $(id).offset().top;
+			
+	$('html, body').animate({ 
+		scrollTop: targetOffset - 500
+	}, 500);
+}); 
+
+$(".menu-barras").on("click", function(){
+			
+			$("header").toggleClass("open-menu");
+		});
+		
+$("#menu-mobile-mask, .btn-close").on("click", function(){
+			
+			$("header").removeClass("open-menu");
+		});
+		
+$("#contato").on("click", function(){
+			
+			$("header").removeClass("open-menu");
+		});
+   
+$('.estrelas').each(function(){
+        
+     $(this).raty({
+        starHalf:'lib/raty/lib/images/star-half.png',
+        starOff :'lib/raty/lib/images/star-off.png',
+        starOn  :'lib/raty/lib/images/star-on.png',
+        score   : parseFloat($(this).data("score"))
+         });
+    });
+		
+});

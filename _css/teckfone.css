@@ -1,0 +1,161 @@
+@font-face {
+	font-family: 'EngraversGothic BT';
+	src: url("../fonts/EngraversGothic_BT.ttf");
+	font-size: 1em;
+}
+html{overflow-x:hidden;}
+
+:root{
+    --primary-gradient: linear-gradient(to right, #4e4376, #2b5876);
+    --mango-gradient : linear-gradient(to top, #0568CD, #01245E );
+	--super-gradient : linear-gradient(to top, #01245E, #0568CD );
+}
+footer a{width: 50px; height: 50px;}
+footer .box-bnt-up { width: 50px; height: 50px;  position: relative; top: 20px; left: calc(50% - 25px); border-radius: 25px;  color: #012B65;background: var(--mango-gradient); }
+footer .box-bnt-up .bnt-up{position: relative; top: 6px; left: 9px; font-size: 33px;color: #fff}
+footer .box-bnt-up:hover{background: var(--super-gradient); opacity: 0.8;}
+
+/*-------------------------------*/
+.pinta{background-color: #999; } /*teste de espaço zinza*/
+.pg-azul{background-color: #0454A5;} /*teste de espaço azul*/
+.pg-branco{background-color:#fff;} /*teste de espaço branco*/
+.borda{border: 1px solid #666;} /*coloca borda*/
+/*-------------------------------*/
+nav.pagineiton{background-color: #fff;}
+nav.pagineiton ul{ float: right;}
+nav.pagineiton ul li{}
+
+/*tag nav para desktop*/
+.visible-xs{display: none;}
+nav{height: 50px; background-color:#01245E ; }
+
+nav .menu-barras{font-size: 35px; color: #fff; margin-top: 10px; margin-left: 10px;}
+    
+
+
+nav .container .row ul{margin-top: calc(22px - 10px);}
+nav .container .row ul li{ display: inline-block; list-style: none;}
+nav .container .row ul li a{font: 24px 'EngraversGothic BT'; color: #fff; padding: 10px; font-weight: bold;text-decoration: none;}
+nav .container .row ul li a:hover{color:#0568CD; }
+
+/*Logo teckfone.com.br*/
+nav .logo-top{ width: 234px;float: right; margin-top: 6px;}
+
+/*classe do Banner*/
+.banner-logo .banner-img{width: 100%;}
+.teckfone-logo-footer{position: relative; width: 60%; top: 80px; left: 150px;}
+
+
+
+
+
+/*Classe do Produtos*/
+
+.produtos{width: 100%;}
+/*-----controle fone-hedset------*/
+/*section.btn-controlle .produtos .container #btn-destaque-prev, section.btn-controlle .produtos .container #btn-destaque-next{top: 1000px;}*/
+/*
+section.venda-produto .produtos .container #btn-destaque-prev, section.venda-produto .produtos .container #btn-destaque-next{top: 800px;}*/
+
+.produtos #btn-destaque-prev, .produtos #btn-destaque-next{position: relative; background: none; border: none; outline: 0;top: 260px; font-size: 38px; z-index: 2;}
+.produtos #btn-destaque-prev{left: 4%;}
+.produtos #btn-destaque-next{right: -90%;}
+
+/*-----controle acessorios------*/
+/*section.btn-controlle .produtos .container #btn-acessorio-prev, section.btn-controlle .produtos .container #btn-acessorio-next{top: 1560px;}*/
+
+.produtos #btn-acessorio-prev, .produtos #btn-acessorio-next{position: relative; background: none; border: none; outline: 0;top: 240px; font-size: 38px;z-index: 2;}
+.produtos #btn-acessorio-prev{left: 4%;}
+.produtos #btn-acessorio-next{right: -90%;}
+/*-----controle com principal----*/
+
+
+.produtos .btn-owl-prev, .produtos .btn-owl-next{position: relative; background: none; border: none; outline: 0;top: 240px; font-size: 38px;z-index: 2;}
+.produtos .btn-owl-prev{left: 4%;}
+.produtos .btn-owl-next{right: -90%;}
+
+
+
+
+/*fim do controle*/
+
+.chamada{font: 50px 'EngraversGothic BT'; text-align: center; color: #0568CD; padding-top: 0; }
+hr{border-bottom: 3px solid #FA9631; width: 30%; object-position: center; margin-top: -10px;}
+.descricao-servico{border-bottom: 2px solid #FA9631; width: 90%; margin-top: -10px; margin-left: -20px}
+
+.chamada-servico{font: 20px 'EngraversGothic BT'; color:  #012B65; }
+.chamada-servico h4{font-weight: bold;}
+.chamada-servico ul li a{text-decoration: none; color: black;}
+.chamada-servico ul li a:hover{font-weight: bold;}
+
+.anuncio-prod{width: 260px; margin-left: 5px;padding: 10px;}
+.anuncio-prod h3{font:18px 'EngraversGothic BT';color:  #012B65;}
+.anuncio-prod .img-anuncio-prod{width: 250px; height: 189px; border: 1px solid #ccc; padding: 10px 5px; margin-bottom: 10px;}
+.anuncio-prod .img-anuncio-prod .foto-produto{ width: 70%; position: relative; margin: 0 auto;}
+.anuncio-prod a{text-decoration: none;}
+
+
+.prod_val{font: 'EngraversGothic BT';color:  #012B65; font-size: 18px; margin-left: 10px; float: left; width: 88px; padding: 5px;}
+
+.prod_val span{display: block; font-weight: bold; margin-left: -10px;}
+
+.not{background-image: url(../_img/cancelado.png);background-repeat: no-repeat;}
+.borda-laranja{border-top: 3px solid #FA9631;border-bottom: 3px solid #FA9631; padding: 10px 0;}
+.banner-home .banner-footer{width: 100%;}
+
+footer{ width: 100%; background-color: #012B65; margin-top: 10px;}
+footer #footer-info{height: 250px;font:'EngraversGothic BT';color: #fff; font-size: 18px;}
+footer .footer-rodape{ width: 100%;  text-align: center;}
+footer #footer-info .contato-footer{ margin-top: 40px;}
+footer .footer-rodape p{color: #fff; padding: 5px;}
+footer #footer-info .contato-footer h4{font-size: 30px; margin-bottom: 20px;}
+footer #footer-info .contato-footer a{font-size: 16px;  text-decoration: none; color: #fff;}
+
+footer #footer-info .contato-footer i{color: #fff;font-size: 20px;margin-right: 6px;}
+footer #footer-info .contato-footer address i {margin-left: 5px;}
+footer #footer-info .contato-footer .contato-whats{font-size: 25px;}
+footer #footer-info .contato-footer .contato-mail{}
+
+/*-----------templayte shop-------------------*/
+#descricao-produto .imagem-produto-p{width: 21%; float: left;}
+#descricao-produto .imagem-produto-p ul{margin: 0 auto;}
+
+#descricao-produto .imagem-produto-p ul li{list-style: none; border: 2px solid #999; padding: 2px; margin-bottom: 5px; }
+#descricao-produto .imagem-produto-p ul li a{text-decoration: none;}
+#descricao-produto .imagem-produto-p ul li a img{width: 90%; display: block; }
+
+.imagem-produto-g{width: 78%; float: right; border: 2px solid #999;padding: 5px;}
+.imagem-produto-g img{width: 90%; }
+.descricao-produt h6{text-decoration: line-through;}
+.descricao-produt h3{}
+.descricao-produt h3 span{ font-family: 'Harlow Solid Italic'; color: #FA9631; font-size: 16px; font-weight: bold;}
+.descricao-produt{font-family: Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif; color:#000; font-size: 18px;}
+.descricao-produt h4{ background-color:#01245E ; color: #fff; padding: 10px; font-weight: bold; text-shadow: 1px 1px #999;}
+.descricao-produt h5{font-size: 16px;}
+.descricao-produt h6{font-size: 18px;}
+.descricao-produt p{font-size: 14px; color: #666;}
+header.open-menu #menu-mobile, header.open-menu #menu-mobile-mask{display: none;}
+#descricao-produto .imagem-produto-p .efeito{border-right: 4px solid #0568CD; padding-right: -2px;}
+#descricao-produto a{text-decoration: none;font-size: 16px; font-family: Proxima Nova,-apple-system,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif; color: #666;}
+#descricao-produto a i{margin-right: 2px;}
+
+/***Pesquisa de produtos***/
+#pesquisa{ margin-top: 20px;}
+/*.drop form.busca-prod input[type=search]{position: relative; width:1px; border-radius: 20px 0px 0px 20px; transition: 2s;}
+.drop form.busca-prod button {float: left; transition: 2s;}*/
+form.busca-prod input[type=search] { right: 0; padding: 10px; font-size: 22px; border: 1px solid grey; float: left;	width: 95%;	background: #f1f1f1; border-radius: 20px 0px 0px 20px; outline: 0;transition: 2s; }
+form.busca-prod button {float: left; outline: 0; width: 5%; padding: 10px; background: #2196F3; color: white; font-size: 17px; border: 1px solid grey; border-radius: 0px 20px 20px 0px; border-left: none; cursor: pointer;transition: 2s;}
+form.busca-prod button:hover {background: #0b7dda;}
+form.busca-prod::after {content: ""; clear: both; display: table;}
+/***fim Pesquisa de produtos***/
+.mangen-buton{margin-bottom: 20px;}
+#produto-list .list-prod a{text-decoration: none; color: #012B65;}
+#produto-list .list-prod{ border-bottom: 1px solid #ccc; margin-bottom: 10px;}
+#produto-list .list-prod:last-child{border-bottom: 1px solid #fff;}
+#produto-list .list-prod .conteudo{padding-left: 20px; padding-top: 25px; font-family: sans-serif; }
+#produto-list .list-prod .conteudo h3{font-size:22px; }
+#produto-list .list-prod .conteudo h4{font:22px sans-serif; }
+#produto-list .list-prod .foto{ width: 210px;}
+#produto-list .list-prod .conteudo button{font:18px sans-serif; color: #fff; position: relative; left: 170px; bottom: 60px; cursor: pointer; background:#0b7dda; padding: 10px 20px; border-radius: 15px; border: none;  box-shadow: 0 4px 4px -2px #989898; outline: 0;}
+#produto-list .list-prod .conteudo button:hover{opacity: 0.8;}
+
